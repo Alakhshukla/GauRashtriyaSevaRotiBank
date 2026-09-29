@@ -10,19 +10,18 @@ on:
       - main
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      
+
       - name: List files
-        run: ls -a
-      
+        run: ls -la
+
       - name: Check required files
         run: |
           test -f Home.html
           test -d CSS
-          test -d JS
-      
+          test -d js
